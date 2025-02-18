@@ -62,8 +62,23 @@ createTaskBtn.addEventListener("click", () => {
 });
 
 closeBtn.addEventListener("click", () => {
+  const form = document.getElementById("edit-task-form")
+    ? document.getElementById("edit-task-form")
+    : document.getElementById("create-task-form");
+
+  if (form) {
+    for (let element of form.elements) {
+      if (element.name) {
+        element.value = "";
+        element.classList.remove("error-input");
+        element.classList.add("input");
+      }
+    }
+  }
+
   modal.style.display = "none";
   overlay.style.display = "none";
+
   localStorage.removeItem("edit-task");
 });
 

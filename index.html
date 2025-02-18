@@ -30,12 +30,16 @@
       <div class="modal-content">
         <form id="create-task-form" class="create-form">
           <div class="task-input-div">
-            <label for="title">Task Title: </label>
+            <label for="title"
+              >Task Title<span class="mandatory"><sup>*</sup></span
+              >&nbsp;:
+            </label>
             <input
               type="text"
               placeholder="Enter Task Title"
               id="title"
               name="title"
+              class="input"
             />
           </div>
           <div class="task-input-div">
@@ -44,12 +48,14 @@
               name="description"
               id="description"
               placeholder="Enter Task Description"
+              class="input"
             ></textarea>
           </div>
           <div class="create-task-form__selection">
             <div class="task-input-div">
               <label for="status">Status:</label>
-              <select name="status" id="status">
+              <select name="status" id="status" class="input">
+                <option value="">Select Status</option>
                 <option value="pending">Pending</option>
                 <option value="in-progress">In Progress</option>
                 <option value="review">Review</option>
@@ -58,7 +64,8 @@
             </div>
             <div class="task-input-div">
               <label for="priority">Priority:</label>
-              <select name="priority" id="priority">
+              <select name="priority" id="priority" class="input">
+                <option value="">Select Priority</option>
                 <option value="1">High</option>
                 <option value="2">Medium</option>
                 <option value="3">Low</option>
