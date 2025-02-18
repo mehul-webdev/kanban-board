@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kanban Board</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <div class="overlay" id="overlay"></div>
+    <div id="create-task-modal" class="modal">
+      <span class="close" id="close-modal">&times;</span>
+      <div class="modal-title">
+        <h3>Create Task</h3>
+      </div>
+      <hr />
+      <div class="modal-content">
+        <form id="create-task-form" class="create-form">
+          <div class="task-input-div">
+            <label for="title">Task Title: </label>
+            <input
+              type="text"
+              placeholder="Enter Task Title"
+              id="title"
+              name="title"
+            />
+          </div>
+          <div class="task-input-div">
+            <label for="description">Description: </label>
+            <textarea
+              name="description"
+              id="description"
+              placeholder="Enter Task Description"
+            ></textarea>
+          </div>
+          <div class="create-task-form__selection">
+            <div class="task-input-div">
+              <label for="status">Status:</label>
+              <select name="status" id="status">
+                <option value="pending">Pending</option>
+                <option value="in-progress">In Progress</option>
+                <option value="review">Review</option>
+                <option value="completed">Completed</option>
+              </select>
+            </div>
+            <div class="task-input-div">
+              <label for="priority">Priority:</label>
+              <select name="priority" id="priority">
+                <option value="1">High</option>
+                <option value="2">Medium</option>
+                <option value="3">Low</option>
+              </select>
+            </div>
+          </div>
+          <button type="submit" class="btn" id="submit-form-button">
+            Submit
+          </button>
+        </form>
+      </div>
+    </div>
+    <nav class="navbar">
+      <h1 class="title">Kanban Board</h1>
+      <button class="btn" id="create-task-btn" title="create-task">
+        <i class="fa-solid fa-plus"></i> &nbsp;Create Task
+      </button>
+    </nav>
+    <div class="board">
+      <div class="pending board-box" id="pending-tasks">
+        <h3 class="board-box-title">Pending</h3>
+        <hr class="divider" />
+      </div>
+      <div class="in-progress board-box" id="in-progress-tasks">
+        <h3 class="board-box-title">In Progress</h3>
+        <hr class="divider" />
+      </div>
+      <div class="review board-box" id="review-tasks">
+        <h3 class="board-box-title">Review</h3>
+        <hr class="divider" />
+      </div>
+      <div class="completed board-box" id="done-tasks">
+        <h3 class="board-box-title">Completed</h3>
+        <hr class="divider" />
+      </div>
+    </div>
+  </body>
+  <script src="./script.js" type="module"></script>
+  <script src="./createTask.js" type="module"></script>
+  <script src="updateBoard.js" type="module"></script>
+  <script src="helpingFunctions.js" type="module"></script>
+  <script src="editBoard.js" type="module"></script>
+</html>
