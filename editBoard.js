@@ -10,7 +10,7 @@ board.addEventListener("click", (e) => {
   ) {
     const currentData = JSON.parse(localStorage.getItem("to-do-list"));
 
-    const getTaskIdFrom = e.target.parentElement.parentElement;
+    const getTaskIdFrom = e.target.parentElement.parentElement.parentElement;
     const currentId = getTaskIdFrom.getAttribute("data-id");
     const currentStatus = getTaskIdFrom.classList[0];
     createTaskForm.id = "edit-task-form";

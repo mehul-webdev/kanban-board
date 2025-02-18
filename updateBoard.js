@@ -90,9 +90,14 @@ function createTaskBox(taskType, task) {
                     <p class="task-box-description">
                       ${task.description}
                     </p>
-                    <div class="task-box-actions">
+                    <div class="task-box-features">
+                      <div class="task-box-status ${taskType}-status">
+
+                      </div>
+                      <div class="task-box-actions">
                         <i class="fa-solid fa-pen-to-square edit-task"></i>
                         <i class="fa-solid fa-trash delete-task"></i>
+                      </div>
                     </div>
               `;
 
